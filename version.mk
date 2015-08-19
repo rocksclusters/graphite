@@ -1,0 +1,6 @@
+ROLLNAME	= graphite
+VERSION		= 0.9.9
+RELEASE		= 0
+COLOR		= gold
+
+REDHAT.ROOT	= $(CURDIR)

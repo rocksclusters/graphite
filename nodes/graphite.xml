@@ -1,0 +1,34 @@
+<?xml version="1.0" standalone="no" ?>
+
+<kickstart>
+
+<description>
+Graphite Setup
+</description>
+
+<changelog>
+
+</changelog>
+
+<package>carbon</package>
+<package>django-tagging</package>
+<package>Django</package>
+<package>graphite-config</package>
+<package>graphite-web</package>
+<package>memcached</package>
+<package>mod_wsgi</package>
+<package>python-memcached</package>
+<package>pytz</package>
+<package>rrdtool</package>
+<package>rrdtool-python</package>
+<package>sqlite</package>
+<package>Twisted</package>
+<package>txAMQP</package>
+<package>whisper</package>
+<package>zope.interface</package>
+
+<post>
+
+</post>
+
+</kickstart>

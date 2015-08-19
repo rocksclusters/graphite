@@ -1,0 +1,44 @@
+
+# build directory
+BUILD/
+RPMS/
+SOURCES/
+SPECS/
+
+
+*.pyc
+
+_os
+_arch
+_distribution
+
+# ignore version.mk
+rocks-version.mk
+rocks-version-common.mk
+
+# ignore python.mk
+python.mk
+
+# ignore Rules files
+Rules-install.mk
+Rules-linux-centos.mk
+Rules-linux.mk
+Rules-rcfiles.mk
+Rules-scripts.mk
+Rules.mk
+Rolls.mk
+
+# --- BEGIN --- binaries files
+./src/zope.interface/zope.interface-4.1.2.tar.gz
+./src/txamqp/python-txamqp-0.3.tar.gz
+./src/whisper/whisper-0.9.9.tar.gz
+./src/whisper/whisper-0.9.10.tar.gz
+./src/graphite-web/graphite-web-0.9.13.tar.gz
+./src/graphite-web/graphite-web-0.9.9.tar.gz
+./src/Django/Django-1.8.3.tar.gz
+./src/Django/Django-1.7.9.tar.gz
+./src/Django/Django-1.6.9.tar.gz
+./src/django-tagging/django-tagging-0.3.1.tar.gz
+./src/carbon/carbon-0.9.9.tar.gz
+./src/Twisted/Twisted-15.3.0.tar.bz2
+# --- END ---
