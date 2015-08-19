@@ -74,13 +74,22 @@ include Rules.mk
 SCRIPTS =	graphite-config 
 
 build::
-
+	$(TAR) xzf $(GRAPHITE)-$(GRAPHITE_VERSION).$(TAR_POSTFIX)
+	$(TAR) xzf $(CARBON)-$(CARBON_VERSION).$(TAR_POSTFIX)
 
 install::
 	mkdir -p $(ROOT)/$(PKGROOT)
+	mkdir -p $(ROOT)/opt/graphite/conf
+	mkdir -p $(ROOT)/opt/graphite/webapp/graphite
+	find $(GRAPHITE)-$(GRAPHITE_VERSION)/conf -name '*example' | \
+		xargs -I XXX  $(INSTALL) -m 0644 XXX $(ROOT)/opt/graphite/conf 
+	find $(GRAPHITE)-$(GRAPHITE_VERSION)/webapp/graphite -name '*example' | \
+		xargs -I XXX  $(INSTALL) -m 0644 XXX $(ROOT)/opt/graphite/webapp/graphite
+	find $(CARBON)-$(CARBON_VERSION)/conf -name '*example' | \
+		xargs -I XXX  $(INSTALL) -m 0644 XXX $(ROOT)/opt/graphite/conf 
 	(								\
 		for i in $(SCRIPTS); do 					\
-			$(INSTALL) -m 0644 $$i $(ROOT)/$(PKGROOT) ;		\
+			$(INSTALL) -m 0755 $$i $(ROOT)/$(PKGROOT) ;		\
 		done								\
 	)
 
