@@ -7,4 +7,5 @@ TAR_POSTFIX	= tar.gz
 GRAPHITE = graphite-web
 CARBON =   carbon
 #RPM.PREFIX	= /etc/init.d
+RPM.FILESLIST = fileslist
 

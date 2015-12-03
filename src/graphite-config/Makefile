@@ -80,9 +80,12 @@ build::
 install::
 	mkdir -p $(ROOT)/$(PKGROOT)
 	mkdir -p $(ROOT)/opt/graphite/conf
+	mkdir -p $(ROOT)/opt/graphite/examples
 	mkdir -p $(ROOT)/opt/graphite/webapp/graphite
 	find $(GRAPHITE)-$(GRAPHITE_VERSION)/conf -name '*example' | \
 		xargs -I XXX  $(INSTALL) -m 0644 XXX $(ROOT)/opt/graphite/conf 
+	find $(GRAPHITE)-$(GRAPHITE_VERSION)/examples -exec \
+		$(INSTALL) -m 0644 {} $(ROOT)/opt/graphite/examples \; -print
 	find $(GRAPHITE)-$(GRAPHITE_VERSION)/webapp/graphite -name '*example' | \
 		xargs -I XXX  $(INSTALL) -m 0644 XXX $(ROOT)/opt/graphite/webapp/graphite
 	find $(CARBON)-$(CARBON_VERSION)/conf -name '*example' | \
@@ -92,4 +95,5 @@ install::
 			$(INSTALL) -m 0755 $$i $(ROOT)/$(PKGROOT) ;		\
 		done								\
 	)
+	find $(ROOT) -type f | sed 's#$(ROOT)##' > $(RPM.FILESLIST)
 
