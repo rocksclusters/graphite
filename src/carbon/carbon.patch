@@ -1,0 +1,19 @@
+*** carbon-0.9.9/lib/carbon/util.py	2011-10-05 02:25:35.000000000 -0700
+--- carbon-0.9.9-patched/lib/carbon/util.py	2015-12-04 09:26:49.730559047 -0800
+***************
+*** 16,22 ****
+  
+  from twisted.python.util import initgroups
+  from twisted.scripts.twistd import runApp
+! from twisted.scripts._twistd_unix import daemonize
+  
+  
+  daemonize = daemonize # Backwards compatibility
+--- 16,22 ----
+  
+  from twisted.python.util import initgroups
+  from twisted.scripts.twistd import runApp
+! import daemonize
+  
+  
+  daemonize = daemonize # Backwards compatibility

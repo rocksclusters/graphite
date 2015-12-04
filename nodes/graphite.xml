@@ -11,6 +11,7 @@ Graphite Setup
 </changelog>
 
 <package>carbon</package>
+<package>daemonize</package>
 <package>django-tagging</package>
 <package>Django</package>
 <package>graphite-config</package>

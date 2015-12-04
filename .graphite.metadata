@@ -12,3 +12,4 @@ f737bff307a21175b0dbacdb7969cd6bfff6f6ea  ./src/django-tagging/django-tagging-0.
 84f053a6db50056e714db925b800a79cbae0be3a  ./src/carbon/carbon-0.9.9.tar.gz
 84f053a6db50056e714db925b800a79cbae0be3a  ./src/graphite-config/carbon-0.9.9.tar.gz
 1932cc62ac038cce1624f3aa1c893bd83afe0f32  src/Twisted/Twisted-15.3.0.tar.bz2
+c4c0a11acd1bbbacb767d87130abf219c0f68213  src/daemonize/daemonize-2.4.1.tar.gz
