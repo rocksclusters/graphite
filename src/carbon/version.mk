@@ -1,5 +1,5 @@
 NAME		= carbon
-VERSION		= 0.9.9
+VERSION		= 0.9.15
 RELEASE		= 1
 ARCH		= noarch
-PATCHFILE	= carbon.patch
+PATCHFILE	= carbon-$(VERSION).patch

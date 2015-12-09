@@ -19,6 +19,7 @@ Graphite Setup
 <package>memcached</package>
 <package>mod_wsgi</package>
 <package>python-memcached</package>
+<package>python-simplejson</package>
 <package>pytz</package>
 <package>rrdtool</package>
 <package>rrdtool-python</package>

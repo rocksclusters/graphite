@@ -1,0 +1,12 @@
+*** graphite-web-0.9.15/setup.cfg	2015-11-27 10:37:16.000000000 -0800
+--- graphite-web-0.9.15-patched/setup.cfg	2015-12-08 18:06:54.765455509 -0800
+***************
+*** 7,13 ****
+             pycairo
+             pycairo-devel
+             python-simplejson
+-            python-sqlite2
+             python-hashlib
+  
+  post-install = distro/redhat/misc/postinstall
+--- 7,12 ----

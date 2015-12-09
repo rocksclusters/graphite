@@ -1,0 +1,19 @@
+*** carbon-0.9.15/setup.cfg	2015-11-27 10:37:07.000000000 -0800
+--- carbon-0.9.15-patched/setup.cfg	2015-12-08 17:42:35.839384815 -0800
+***************
+*** 3,9 ****
+  install-lib = %(prefix)s/lib
+  
+  [bdist_rpm]
+! requires = python-twisted
+             whisper
+  
+  post-install = distro/redhat/misc/postinstall
+--- 3,9 ----
+  install-lib = %(prefix)s/lib
+  
+  [bdist_rpm]
+! requires = Twisted >= 15.3 
+             whisper
+  
+  post-install = distro/redhat/misc/postinstall

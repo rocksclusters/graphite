@@ -64,7 +64,7 @@ rpm pkg: RPMDIRS
 	$(TAR) xzf  $(NAME)-$(VERSION).tar.gz 
 	(								\
 		cd $(NAME)-$(VERSION);					\
-		$(PATCH) -p1 < ../$(PATCHFILE);				\
+		if [ -f ../$(PATCHFILE) ]; then $(PATCH) -p1 < ../$(PATCHFILE); fi;				\
 		python setup.py bdist_rpm;				\
 		mv dist/$(NAME)*$(ARCH).rpm $(REDHAT.ROOT)/RPMS/$(ARCH); \
 	)

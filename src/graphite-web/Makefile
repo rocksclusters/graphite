@@ -58,11 +58,13 @@
 REDHAT.ROOT     = $(CURDIR)/../../
 include version.mk
 TAR = /bin/tar
+PATCH =  /usr/bin/patch
 
 rpm pkg: RPMDIRS
 	$(TAR) xzf  $(NAME)-$(VERSION).tar.gz 
 	(								\
 		cd $(NAME)-$(VERSION);					\
+		if [ -f ../$(PATCHFILE) ]; then $(PATCH) -p1 < ../$(PATCHFILE); fi;				\
 		python setup.py bdist_rpm;				\
 		mv dist/$(NAME)*$(ARCH).rpm $(REDHAT.ROOT)/RPMS/$(ARCH); \
 	)

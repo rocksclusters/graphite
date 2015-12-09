@@ -1,5 +1,5 @@
 ROLLNAME	= graphite
-VERSION		= 0.9.9
+VERSION		= 0.9.15
 RELEASE		= 0
 COLOR		= gold
 
