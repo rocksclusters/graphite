@@ -96,4 +96,5 @@ install::
 		done								\
 	)
 	find $(ROOT) -type f | sed 's#$(ROOT)##' > $(RPM.FILESLIST)
+	echo "/opt/graphite/examples/example-client.py?" >> $(RPM.FILESLIST)
 
