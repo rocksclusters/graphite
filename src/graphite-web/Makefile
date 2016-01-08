@@ -59,14 +59,21 @@ REDHAT.ROOT     = $(CURDIR)/../../
 include version.mk
 TAR = /bin/tar
 PATCH =  /usr/bin/patch
+BINARCH = `/bin/arch`
+
+RPMTOPDIR = $(PWD)/$(NAME)-$(VERSION)/build/bdist.linux-$(BINARCH)/rpm
 
 rpm pkg: RPMDIRS
 	$(TAR) xzf  $(NAME)-$(VERSION).tar.gz 
 	(								\
 		cd $(NAME)-$(VERSION);					\
 		if [ -f ../$(PATCHFILE) ]; then $(PATCH) -p1 < ../$(PATCHFILE); fi;				\
-		python setup.py bdist_rpm;				\
-		mv dist/$(NAME)*$(ARCH).rpm $(REDHAT.ROOT)/RPMS/$(ARCH); \
+		python setup.py bdist_rpm ;				\
+		pushd $(RPMTOPDIR);					\
+		rpmbuild -ba --define "_topdir $(RPMTOPDIR)" \
+		--define '__os_install_post %{nil}' SPECS/graphite-web.spec ;	\
+		popd;							\
+		mv $(RPMTOPDIR)/RPMS/$(ARCH)/$(NAME)*$(ARCH).rpm $(REDHAT.ROOT)/RPMS/$(ARCH); \
 	)
 RPMDIRS:
 	- mkdir -p $(REDHAT.ROOT)/RPMS/$(ARCH)
